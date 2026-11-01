@@ -390,5 +390,5 @@ footer {
 
 .footer-note { margin: 0.4rem auto 0; max-width: none; font-size: inherit; line-height: inherit; color: var(--muted); }
 
-/* Key phrases in About: a little heavier than the default bold */
-#about strong { -webkit-text-stroke: 0.4px currentColor; }
+/* Bold text: a little heavier than the default bold */
+strong, h1, h2, h3 { -webkit-text-stroke: 0.4px currentColor; }
