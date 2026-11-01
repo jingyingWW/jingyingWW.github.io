@@ -291,6 +291,9 @@ p {
 }
 
 .nav-meta {
+  text-transform: none;
+  letter-spacing: normal;
+  font-style: normal;
   font-size: 0.85rem;
   color: var(--muted);
 }
