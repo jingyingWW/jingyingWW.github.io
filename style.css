@@ -431,10 +431,13 @@ footer {
   padding: 1.5rem; background: rgba(0, 0, 0, 0.72); cursor: zoom-out; }
 .lightbox[hidden] { display: none; }
 .lightbox img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; padding: 0.6rem; background: #fff; border-radius: 4px; }
-.fig-nav { position: relative; }
-.fig-nav .fig-info { margin-left: auto; font-family: inherit; font-style: italic; font-size: 0.8rem; color: var(--muted); }
-.fig-credit { position: absolute; left: 0; top: 100%; z-index: 3; margin: 6px 0 0; width: max-content; white-space: nowrap; padding: 0.4rem 0.7rem;
-  background: var(--bg); border: 1px solid var(--rule); border-radius: 4px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
-  font-size: 0.78rem; font-style: normal; line-height: 1.4; color: var(--muted); text-align: left; }
-.fig-credit[hidden] { display: none; }
-@media (max-width: 560px) { .fig-credit { white-space: normal; max-width: calc(100vw - 4rem); } }
+
+/* Figure picker: small dots instead of arrows and a counter */
+.fig-dots { display: flex; align-items: center; gap: 0.5rem; padding-left: 0.2rem; }
+.fig-nav .fig-dot { position: relative; width: 0.6rem; height: 0.6rem; padding: 0; border: 1px solid var(--muted); border-radius: 50%; background: transparent; cursor: pointer; }
+.fig-nav .fig-dot::before { content: ""; position: absolute; inset: -7px; }
+.fig-nav .fig-dot:hover { border-color: var(--text); }
+.fig-nav .fig-dot.is-on { background: var(--muted); }
+
+.footer-note { margin: 0.4rem auto 0; max-width: 640px; font-size: 0.78rem; line-height: 1.5; color: var(--muted); }
+
