@@ -177,7 +177,7 @@ main a {
 
 main {
   min-width: 0;
-  max-width: 780px;
+  max-width: 797px;
   padding-top: 3.5rem;
 }
 
@@ -233,6 +233,16 @@ p {
   position: relative;
 }
 
+.pub-list li {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+}
+
+.pub-list li em {
+  hyphens: manual;
+}
+
 .pub-list li::before, .cv-list-simple li::before {
   content: "\2022";
   position: absolute;
@@ -253,14 +263,6 @@ p {
   cursor: pointer;
   text-decoration: none;
   border-bottom: 1px solid transparent;
-}
-
-.abstract-toggle::before {
-  content: "[";
-}
-
-.abstract-toggle::after {
-  content: "]";
 }
 
 .abstract-toggle:hover {
