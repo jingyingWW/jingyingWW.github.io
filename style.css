@@ -2,7 +2,7 @@
   --text: #262421;
   --muted: #6b6560;
   --bg: #fdfdfc;
-  --accent: #2f7a57;
+  --accent: var(--text);
   --rule: #e4e0da;
   --max-width: 760px;
 }
@@ -12,7 +12,7 @@
     --text: #e8e4de;
     --muted: #a39d93;
     --bg: #1a1816;
-    --accent: #8fb89c;
+    --accent: var(--text);
     --rule: #38342f;
   }
 }
@@ -21,7 +21,7 @@
   --text: #e8e4de;
   --muted: #a39d93;
   --bg: #1a1816;
-  --accent: #8fb89c;
+  --accent: var(--text);
   --rule: #38342f;
 }
 
@@ -35,7 +35,7 @@ body {
   color: var(--text);
   font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
   line-height: 1.65;
-  font-size: 17px;
+  font-size: 18px;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
@@ -49,13 +49,17 @@ a:hover {
   border-bottom-color: var(--accent);
 }
 
+main a {
+  border-bottom-color: var(--muted);
+}
+
 .page-layout {
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 2rem;
   display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 5.5rem;
+  grid-template-columns: 275px 1fr;
+  gap: 4rem;
   align-items: start;
 }
 
@@ -71,6 +75,10 @@ a:hover {
 
 .header-text {
   margin-top: 1.8rem;
+}
+
+.sidebar p {
+  text-align: left;
 }
 
 .header-text h1 {
@@ -166,7 +174,7 @@ a:hover {
 
 main {
   min-width: 0;
-  max-width: 720px;
+  max-width: 900px;
   padding-top: 3.5rem;
 }
 
@@ -189,7 +197,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   margin: 1.8rem 0 0.8rem;
   color: var(--text);
 }
@@ -352,6 +360,9 @@ footer {
     padding-bottom: 1rem;
     padding-right: 0;
     border-right: none;
+    text-align: center;
+  }
+  .sidebar p {
     text-align: center;
   }
   .site-nav {
