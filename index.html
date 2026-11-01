@@ -55,7 +55,7 @@
     <ul class="pub-list">
       <li>
         <strong>Wang, J.</strong>, Block, P., 2026.
-        "<a href="https://doi.org/10.1016/j.rssm.2026.101203" target="_blank" rel="noopener">The structure of inter-occupational marriages in the United States 1970&ndash;2021</a>."
+        "The structure of inter-occupational marriages in the United States 1970&ndash;2021."
         <em>Research in Social Stratification and Mobility, 106</em>, 101203.
         <div class="figs" data-figs>
           <figure class="fig-slide">
@@ -70,13 +70,14 @@
             <button type="button" class="fig-prev" aria-label="Previous figure">&lsaquo;</button>
             <span class="fig-count">1 / 2</span>
             <button type="button" class="fig-next" aria-label="Next figure">&rsaquo;</button>
+            <button type="button" class="fig-info" aria-label="Figure credit and licence" aria-expanded="false">i</button>
+            <p class="fig-credit" hidden>Figures from the <a href="https://doi.org/10.1016/j.rssm.2026.101203" target="_blank" rel="noopener">article</a>, open access under a Creative Commons licence; resized.</p>
           </div>
-          <p class="fig-credit">Figures from the <a href="https://doi.org/10.1016/j.rssm.2026.101203" target="_blank" rel="noopener">article</a>, open access under a Creative Commons licence; resized.</p>
         </div>
       </li>
       <li>
         Peterman, A., <strong>Wang, J.</strong>, Kamto Sonke, K. and Steinert, J.I., 2026.
-        "<a href="https://www.nature.com/articles/s41562-025-02394-0" target="_blank" rel="noopener">Social safety nets, women's economic achievements and agency in 45 countries: a systematic review and meta-analysis</a>."
+        "Social safety nets, women's economic achievements and agency in 45 countries: a systematic review and meta-analysis."
         <em>Nature Human Behaviour, 10(4), pp.698&ndash;714.</em>
         <div class="figs" data-figs>
           <figure class="fig-slide">
@@ -91,8 +92,9 @@
             <button type="button" class="fig-prev" aria-label="Previous figure">&lsaquo;</button>
             <span class="fig-count">1 / 2</span>
             <button type="button" class="fig-next" aria-label="Next figure">&rsaquo;</button>
+            <button type="button" class="fig-info" aria-label="Figure credit and licence" aria-expanded="false">i</button>
+            <p class="fig-credit" hidden>Figures from the <a href="https://www.nature.com/articles/s41562-025-02394-0" target="_blank" rel="noopener">article</a>, shown under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>; resized.</p>
           </div>
-          <p class="fig-credit">Figures from the article, shown under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>; resized.</p>
         </div>
       </li>
       <li>
@@ -214,9 +216,24 @@
       box.hidden = false;
     }
     function closeLarge() { box.hidden = true; }
-    document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeLarge(); });
+    document.addEventListener("keydown", function (e) {
+      if (e.key !== "Escape") return;
+      closeLarge();
+      [].forEach.call(document.querySelectorAll(".fig-credit"), function (c) {
+        c.hidden = true;
+        c.closest("[data-figs]").querySelector(".fig-info").setAttribute("aria-expanded", "false");
+      });
+    });
 
     document.addEventListener("click", function (e) {
+      var infoBtn = e.target.closest && e.target.closest(".fig-info");
+      [].forEach.call(document.querySelectorAll(".fig-credit"), function (c) {
+        var block = c.closest("[data-figs]"), btn = block.querySelector(".fig-info");
+        if (infoBtn && infoBtn === btn) c.hidden = !c.hidden;
+        else if (!c.hidden && !c.contains(e.target)) c.hidden = true;
+        btn.setAttribute("aria-expanded", String(!c.hidden));
+      });
+      if (infoBtn) return;
       var figs = e.target.closest && e.target.closest("[data-figs]");
       if (figs && (e.target.closest(".fig-next") || e.target.closest(".fig-prev"))) {
         var slides = figs.querySelectorAll(".fig-slide"), cur = 0;

@@ -1,9 +1,9 @@
 :root {
   --text: #262421;
   --muted: #6b6560;
-  --bg: #fdfdfc;
+  --bg: #ffffff;
   --accent: var(--text);
-  --rule: #e4e0da;
+  --rule: #d3cec6;
   --max-width: 760px;
 }
 
@@ -198,12 +198,17 @@ h2 {
 
 h3 {
   font-size: 1.2rem;
-  margin: 1.8rem 0 0.8rem;
+  margin: 2rem 0 1.1rem;
   color: var(--text);
 }
 
 h3:first-of-type {
   margin-top: 0;
+}
+
+h3:not(:first-of-type) {
+  padding-top: 1.7rem;
+  border-top: 1px solid color-mix(in srgb, var(--rule) 50%, var(--bg));
 }
 
 p {
@@ -220,7 +225,7 @@ p {
 }
 
 .pub-list li, .cv-list-simple li {
-  margin-bottom: 0.9rem;
+  margin-bottom: 1.5rem;
   padding-left: 1.2rem;
   position: relative;
 }
@@ -315,7 +320,8 @@ p {
 }
 
 .cv-list dd {
-  margin: 0 0 0.6rem;
+  margin: 0 0 1.1rem;
+  line-height: 1.8;
 }
 
 footer {
@@ -425,4 +431,10 @@ footer {
   padding: 1.5rem; background: rgba(0, 0, 0, 0.72); cursor: zoom-out; }
 .lightbox[hidden] { display: none; }
 .lightbox img { max-width: 94vw; max-height: 92vh; width: auto; height: auto; padding: 0.6rem; background: #fff; border-radius: 4px; }
-.fig-credit { margin: 0.35rem 0 0; font-size: 0.78rem; line-height: 1.4; color: var(--muted); text-align: left; hyphens: manual; }
+.fig-nav { position: relative; }
+.fig-nav .fig-info { margin-left: auto; font-family: inherit; font-style: italic; font-size: 0.8rem; color: var(--muted); }
+.fig-credit { position: absolute; left: 0; top: 100%; z-index: 3; margin: 6px 0 0; width: max-content; white-space: nowrap; padding: 0.4rem 0.7rem;
+  background: var(--bg); border: 1px solid var(--rule); border-radius: 4px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  font-size: 0.78rem; font-style: normal; line-height: 1.4; color: var(--muted); text-align: left; }
+.fig-credit[hidden] { display: none; }
+@media (max-width: 560px) { .fig-credit { white-space: normal; max-width: calc(100vw - 4rem); } }
