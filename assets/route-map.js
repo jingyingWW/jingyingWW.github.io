@@ -10,7 +10,7 @@
     career: "The Stratification of Occupational Career Lines: A Structural Comparison Between Gender-Education Groups"
   };
   var STOPS = [
-    {key: "oxford", text: "Research stay at Nuffield College, University of Oxford", alt: true, year: "2025", month: "January – June", city: "Oxford", country: "England", lon: -1.26, lat: 51.75},
+    {key: "oxford", text: "Research visit at Nuffield College, University of Oxford", alt: true, year: "2025", month: "January – June", city: "Oxford", country: "England", lon: -1.26, lat: 51.75},
     {key: "edinburgh", paper: "marriage", year: "2024", month: "June", city: "Edinburgh", country: "Scotland", lon: -3.19, lat: 55.95},
     {key: "barcelona", paper: "marriage", year: "2024", month: "September", city: "Barcelona", country: "Spain", lon: 2.17, lat: 41.39},
     {key: "lausanne", paper: "marriage", year: "2024", month: "October", city: "Lausanne", country: "Switzerland", lon: 6.63, lat: 46.52},
