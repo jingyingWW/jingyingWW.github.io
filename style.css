@@ -30,6 +30,7 @@
 html { scroll-behavior: smooth; }
 
 body {
+  position: relative;
   margin: 0;
   background: var(--bg);
   color: var(--text);
@@ -454,20 +455,20 @@ footer {
 /* Faint network background: the MoNAn nodes and links, huge and almost invisible */
 body::before {
   content: "";
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: -1;
   pointer-events: none;
   background-color: var(--text);
-  opacity: 0.06;
-  -webkit-mask: url("assets/monan-bg.png") no-repeat calc(max(307px, 50vw - 333px) + 30px - 6.6vmax) 15% / 115vmax auto;
-  mask: url("assets/monan-bg.png") no-repeat calc(max(307px, 50vw - 333px) + 30px - 6.6vmax) 15% / 115vmax auto;
+  opacity: 0.04;
+  -webkit-mask: url("assets/monan-bg.png") repeat-y calc(max(307px, 50vw - 333px) + 30px - 38.2vmax) -80px / 115vmax auto;
+  mask: url("assets/monan-bg.png") repeat-y calc(max(307px, 50vw - 333px) + 30px - 38.2vmax) -80px / 115vmax auto;
 }
 
 @media (max-width: 820px) {
   body::before {
-    -webkit-mask-position: 50% 15%;
-    mask-position: 50% 15%;
+    -webkit-mask-position: 50% -40px;
+    mask-position: 50% -40px;
   }
 }
 
