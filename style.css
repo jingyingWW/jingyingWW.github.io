@@ -11,18 +11,18 @@
   :root:not([data-theme="light"]) {
     --text: #e8e4de;
     --muted: #a39d93;
-    --bg: #1a1816;
+    --bg: #2b2825;
     --accent: var(--text);
-    --rule: #38342f;
+    --rule: #48443e;
   }
 }
 
 :root[data-theme="dark"] {
   --text: #e8e4de;
   --muted: #a39d93;
-  --bg: #1a1816;
+  --bg: #2b2825;
   --accent: var(--text);
-  --rule: #38342f;
+  --rule: #48443e;
 }
 
 * { box-sizing: border-box; }
@@ -420,7 +420,8 @@ footer {
 .fig-frame { height: 230px; display: flex; align-items: center; justify-content: center; padding: 0.5rem;
   background: #fff; border: 1px solid var(--rule); border-radius: 4px; }
 .fig-frame img { max-width: 100%; max-height: 100%; width: auto; height: auto; cursor: zoom-in; }
-.fig-slide figcaption { margin-top: 0.5rem; font-size: 0.85rem; line-height: 1.45; color: var(--muted); text-align: left; hyphens: manual; }
+.fig-slide figcaption { margin-top: 0.5rem; font-size: 0.8rem; line-height: 1.45; color: var(--muted); text-align: left; hyphens: manual; white-space: nowrap; }
+@media (max-width: 560px) { .fig-slide figcaption { white-space: normal; } }
 .fig-nav { margin-top: 0.45rem; display: flex; align-items: center; gap: 0.6rem; font-size: 0.85rem; color: var(--muted); }
 .fig-nav button { width: 1.7rem; height: 1.7rem; padding: 0; background: none; border: 1px solid var(--rule); border-radius: 999px;
   color: var(--text); font: inherit; line-height: 1; cursor: pointer; }
