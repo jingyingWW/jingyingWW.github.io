@@ -385,23 +385,25 @@ footer {
 .route-point { fill: var(--text); }
 .route-hub { stroke: var(--bg); stroke-width: 1.4; }
 .route-hit { fill: transparent; }
+.route-tie-hit { fill: none; stroke: transparent; stroke-width: 9; pointer-events: stroke; cursor: pointer; }
 .route-dot { cursor: pointer; outline: none; }
 .route-dot:hover .route-point, .route-dot:focus .route-point { stroke: var(--text); stroke-width: 2; stroke-opacity: 0.3; }
 
-.route-tip { position: absolute; z-index: 2; width: 280px; max-width: 100%; padding: 0.5rem 0.65rem; pointer-events: none;
-  background: var(--bg); border: 1px solid var(--rule); border-radius: 4px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+.route-tip { position: absolute; z-index: 2; width: max-content; max-width: 440px; padding: 0.5rem 0.65rem; pointer-events: none;
+  background: color-mix(in srgb, var(--rule) 50%, var(--bg)); border: 1px solid var(--rule); border-radius: 4px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   font-size: 0.8rem; font-style: italic; line-height: 1.4; color: var(--text); text-align: left; hyphens: manual;
   opacity: 0; visibility: hidden; transition: opacity 0.15s ease; }
 .route-tip.is-visible { opacity: 1; visibility: visible; }
+.route-tip-meta { font-style: normal; color: var(--muted); }
+.presentations { margin-bottom: 1.8rem; }
 .route-tie, .route-arrow { transition: opacity 0.15s ease, stroke 0.15s ease, fill 0.15s ease; }
 .route-map.has-active .route-tie, .route-map.has-active .route-arrow { opacity: 0.25; }
 .route-map .route-tie.is-active { stroke: var(--text); stroke-width: 1.9; opacity: 1; }
 .route-map .route-arrow.is-active { fill: var(--text); opacity: 1; }
 .route-dot.is-active .route-point { stroke: var(--text); stroke-width: 3.2; stroke-opacity: 0.25; }
-.pres { cursor: default; text-decoration: underline transparent; text-underline-offset: 0.2em; outline: none; }
-.pres.is-active { text-decoration-color: var(--muted); }
 
 @media (max-width: 1100px) {
   .presentations { flex-direction: column; gap: 1.5rem; }
   .route-map { flex-basis: auto; width: 100%; max-width: 340px; }
+  .route-tip { max-width: min(440px, calc(100vw - 4rem)); }
 }
