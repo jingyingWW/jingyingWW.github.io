@@ -373,3 +373,22 @@ footer {
     margin-bottom: 1rem;
   }
 }
+
+/* Route map */
+.presentations { display: flex; gap: 2.5rem; align-items: flex-start; }
+.presentations .cv-list { flex: 1 1 0; min-width: 0; }
+.route-map { flex: 0 0 320px; margin: 0; }
+.route-map svg { display: block; width: 100%; height: auto; overflow: hidden; }
+.route-land { fill: none; stroke: var(--muted); stroke-opacity: 0.5; stroke-width: 0.6; stroke-linejoin: round; }
+.route-tie { fill: none; stroke: var(--muted); stroke-width: 1.1; stroke-linecap: round; }
+.route-arrow { fill: var(--muted); stroke: none; }
+.route-point { fill: var(--text); }
+.route-hub { stroke: var(--bg); stroke-width: 1.4; }
+.route-hit { fill: transparent; }
+.route-dot { cursor: pointer; outline: none; }
+.route-dot:hover .route-point, .route-dot:focus .route-point { stroke: var(--text); stroke-width: 2; stroke-opacity: 0.3; }
+
+@media (max-width: 1100px) {
+  .presentations { flex-direction: column; gap: 1.5rem; }
+  .route-map { flex-basis: auto; width: 100%; max-width: 340px; }
+}
