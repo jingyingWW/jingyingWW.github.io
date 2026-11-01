@@ -35,7 +35,7 @@ body {
   color: var(--text);
   font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
   line-height: 1.65;
-  font-size: 18px;
+  font-size: 17px;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
 
@@ -174,7 +174,7 @@ main a {
 
 main {
   min-width: 0;
-  max-width: 900px;
+  max-width: 780px;
   padding-top: 3.5rem;
 }
 
