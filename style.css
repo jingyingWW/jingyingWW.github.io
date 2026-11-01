@@ -215,7 +215,6 @@ h3:first-of-type {
 
 h3:not(:first-of-type) {
   padding-top: 1.7rem;
-  border-top: 2px solid color-mix(in srgb, var(--rule) 50%, var(--bg));
 }
 
 
