@@ -94,7 +94,7 @@ main a {
 
 .zh-name {
   display: block;
-  font-family: "LXGW WenKai", "Songti SC", "Noto Serif SC", "Source Han Serif SC", "STSong", serif;
+  font-family: "LXGW WenKai", "Songti SC", "Source Han Serif SC", "STSong", serif;
   font-weight: 500;
   color: var(--text);
   font-size: 1.5rem;
