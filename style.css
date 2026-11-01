@@ -389,3 +389,6 @@ footer {
 .fig-nav .fig-dot.is-on { background: var(--muted); }
 
 .footer-note { margin: 0.4rem auto 0; max-width: none; font-size: inherit; line-height: inherit; color: var(--muted); }
+
+/* Key phrases in About: a little heavier than the default bold */
+#about strong { -webkit-text-stroke: 0.4px currentColor; }
