@@ -255,8 +255,8 @@ p {
 }
 
 .abstract-toggle {
-  display: inline-block;
-  margin-top: 0.4rem;
+  display: block;
+  margin-top: 0.3rem;
   background: none;
   border: none;
   padding: 0;
