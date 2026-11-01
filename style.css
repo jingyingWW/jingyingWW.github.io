@@ -218,7 +218,6 @@ h3:not(:first-of-type) {
   border-top: 2px solid color-mix(in srgb, var(--rule) 50%, var(--bg));
 }
 
-h3.no-rule { border-top: none; padding-top: 0.4rem; }
 
 p {
   margin: 0 0 1rem;
@@ -317,24 +316,6 @@ p {
   hyphens: manual;
 }
 
-.cv-list {
-  display: grid;
-  grid-template-columns: 3.2rem 1fr;
-  gap: 0.5rem 0.8rem;
-  margin: 0;
-}
-
-.cv-list dt {
-  color: var(--text);
-  font-size: inherit;
-  padding-top: 0;
-}
-
-.cv-list dd {
-  margin: 0 0 1.1rem;
-  line-height: 1.8;
-}
-
 footer {
   max-width: 1280px;
   margin: 0 auto;
@@ -379,51 +360,6 @@ footer {
   .split-col + .split-col h2 {
     margin-top: 2rem;
   }
-  .cv-list {
-    grid-template-columns: 1fr;
-    gap: 0.1rem 0;
-  }
-  .cv-list dt {
-    font-weight: 600;
-  }
-  .cv-list dd {
-    margin-bottom: 1rem;
-  }
-}
-
-/* Route map */
-.presentations { display: flex; gap: 2.5rem; align-items: flex-start; }
-.presentations .cv-list { flex: 1 1 0; min-width: 0; }
-.route-map { flex: 0 0 310px; margin: 0; position: relative; }
-.route-map svg { display: block; width: 100%; height: auto; overflow: hidden; }
-.route-land { fill: none; stroke: var(--muted); stroke-opacity: 0.5; stroke-width: 0.6; stroke-linejoin: round; }
-.route-tie { fill: none; stroke: var(--muted); stroke-width: 1.6; stroke-linecap: round; }
-.route-arrow { fill: var(--muted); stroke: none; }
-.route-point { fill: var(--text); }
-.route-alt { fill: var(--bg); stroke: var(--text); stroke-width: 1.5; }
-.route-hub { stroke: var(--bg); stroke-width: 1.4; }
-.route-hit { fill: transparent; }
-.route-tie-hit { fill: none; stroke: transparent; stroke-width: 9; pointer-events: stroke; cursor: pointer; }
-.route-dot { cursor: pointer; outline: none; }
-.route-dot:hover .route-point, .route-dot:focus .route-point { stroke: var(--text); stroke-width: 2; stroke-opacity: 0.3; }
-
-.route-tip { position: absolute; z-index: 2; width: max-content; max-width: 440px; padding: 0.5rem 0.65rem; pointer-events: none;
-  background: color-mix(in srgb, var(--rule) 50%, var(--bg)); border: 1px solid var(--rule); border-radius: 4px; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-  font-size: 0.8rem; font-style: italic; line-height: 1.4; color: var(--text); text-align: justify; text-justify: inter-word; hyphens: manual;
-  opacity: 0; visibility: hidden; transition: opacity 0.15s ease; }
-.route-tip.is-visible { opacity: 1; visibility: visible; }
-.route-tip-meta { font-style: normal; color: var(--muted); }
-.presentations { margin-bottom: 1.8rem; }
-.route-tie, .route-arrow { transition: opacity 0.15s ease, stroke 0.15s ease, fill 0.15s ease; }
-.route-map.has-active .route-tie, .route-map.has-active .route-arrow { opacity: 0.25; }
-.route-map .route-tie.is-active { stroke: var(--text); stroke-width: 2.4; opacity: 1; }
-.route-map .route-arrow.is-active { fill: var(--text); opacity: 1; }
-.route-dot.is-active .route-point { stroke: var(--text); stroke-width: 3.2; stroke-opacity: 0.25; }
-
-@media (max-width: 1100px) {
-  .presentations { flex-direction: column; gap: 1.5rem; }
-  .route-map { flex-basis: auto; width: 100%; max-width: 380px; }
-  .route-tip { max-width: min(440px, calc(100vw - 4rem)); }
 }
 
 /* Figure slideshow under a paper */
