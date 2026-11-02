@@ -170,7 +170,6 @@ main a {
 .site-nav a {
   font-size: 0.95rem;
   letter-spacing: 0.02em;
-  text-transform: uppercase;
   color: var(--text);
 }
 
